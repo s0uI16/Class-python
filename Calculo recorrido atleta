@@ -1,0 +1,12 @@
+#Calcular la distancia recorrida de un atleta
+#Se solicita ingresar la velocidad y el tiempo que estuvo corriendo
+
+tiempo = 0
+velocidad = 0
+distancia = 0
+tiempo=int(input("Ingrese el tiempo que estuvo corriendo en minutos: "))
+velocidad=int(input("Ingrese la velocidad promedio que estuvo corriendo en kilometros/h: "))
+velocidad = velocidad*1000
+velo_tran = velocidad/60
+distancia = velo_tran*tiempo
+print("La distancia recorrida por el atleta en metro es de: ", distancia)

@@ -1,0 +1,29 @@
+# Crear un programa que permita ingresar el valor de un numero y qeue el usuario lo adivine en un maximo de 5 oportunidades
+#Se debe indicar el numero de intentos
+#Como pista debe informar al usuario que el numero de ingresado es mayor o menor que debe adivinar
+
+
+import random
+intentos=0
+adivina = random.randint(0,100)
+
+while intentos<5:
+    num=int(input("Ingrese un numero entre 0 y 100: "))
+    if num == adivina:
+        print("¡Felicitaciones lo has logrado!")
+        intentos=5
+    else:
+        intentos = intentos + 1
+        print("Solo tiene 5 intentos, lleva: ", intentos)
+        if num < adivina:
+            print("Su numero es menor")
+        if num > adivina:
+            print("Su numero es mayor)")
+        # par = num%2
+        # if par == 0:
+        #     print("Su numero es par")
+        # if par == 1:
+        #     print("Su numero es impar")
+        if intentos == 5:
+            print()
+            print("Ha peridod todas sus oportunidades")

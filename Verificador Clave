@@ -1,0 +1,26 @@
+# Crear un programa que permita ingresar el valor de una clave y compararla con la clave existente en el sistema 
+# Se tienen 3 oportunidades , si no coinciden se bloquea el sistema por 24 horas.
+# Si las claves coincidan el usuario puede ingresar al sistema
+# Se debe indicar el número de intentos 
+
+nueva_clave_usario = ()
+clave_ingreso = ()
+intento_total = 0
+intento = 0
+
+nueva_clave_usario = int(input("Ingrese su nueva contraseña: "))
+
+while intento_total < 3:
+    clave_ingreso = int(input("Ingrese contraseña para ingresar: "))
+    if clave_ingreso == nueva_clave_usario:
+         print("Clave existosa")
+         print("Bienvenido a Banco Estado")
+         intento_clave = 4
+    else:
+        intento = intento + 1
+        print("Tiene 3 intentos maximos, lleva: ", intento)
+        if intento == 3:
+            print()
+            print("Su cuenta ha sido bloqueada espere 24 horas")
+        
+         

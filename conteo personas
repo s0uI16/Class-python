@@ -1,0 +1,212 @@
+#La asociacion de isapres necesita conocer la cantidad de personas
+#Que se encuentran en diversos medios de salud: Isapre, Fonasa, Dipreca o no pertenece a ningun medio
+#Ademas necesito una estadistica de la cantidad de hombres y mujeres mayores
+#Menores de edad o de tercera edad (>= 60)
+# En el caso de mujeres contabilizar el numero total de hijos que tienen por rango de edad
+genero = ""
+prevision = ""
+inicio = 1
+edad = 0
+fonasa = 0
+isapre = 0
+capredena = 0
+Na = 0
+hombreM = 0
+hombreMe = 0
+hombreTe = 0
+mujeresM = 0
+mujerTe = 0
+mujerMe = 0
+rangoAf = 0
+rangoCf = 0
+rangoDf = 0
+rangoAi = 0
+rangoCi = 0
+rangoDi = 0
+rangoAc = 0
+rangoCc = 0
+rangoDc = 0
+rangoAn = 0
+rangoCn = 0
+rangoDn = 0
+
+#Datos de conteo total de personas
+totalGeneroHi= 0
+totalGeneroMi = 0
+
+totalGeneroHf = 0
+totalGeneroMf = 0
+
+totalGeneroHc = 0
+totalGeneroMc = 0
+
+totalGeneroHn = 0
+totalGeneroMn = 0
+
+print("B I E N V E N I D O")
+while inicio == 1: 
+    prevision = input("Ingrese su prevision (Si no posee ingrese NA/na): ")
+    if prevision == "Fonasa" or prevision == "fonasa":
+        fonasa = fonasa + 1
+        print("Usted esta afiliado a fonasa")
+        genero = input("Ingrese su genero M(Masculino) / F(Femenino): ")
+        if genero == "F" or genero == "f":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroMf = totalGeneroMf + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                mujerMe = mujerMe + 1
+                rangoDf = rangoDf + 1
+            if edad >= 18 and edad <= 59:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoAf = rangoAf + 1
+                mujeresM = mujeresM + 1
+            if edad >= 60:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoCf = rangoCf + 1
+                mujerTe = mujerTe + 1
+        if  genero == "m" or genero == "M":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroHf = totalGeneroHf + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                hombreMe = hombreMe + 1
+                rangoDf = rangoDf + 1
+            if edad >= 18 and edad <= 64:
+                hombreM = hombreM + 1
+                rangoAf = rangoAf + 1
+            if edad >= 65:
+                hombreTe = hombreTe + 1
+                rangoCf = rangoCf + 1
+    if prevision == "Isapre" or prevision == "isapre":
+        isapre = isapre + 1
+        print("Usted esta afiliado a isapre")
+        genero = input("Ingrese su genero M(Masculino) / F(Femenino): ")
+        if genero == "F" or genero == "f":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroMi = totalGeneroMi + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                mujerMe = mujerMe + 1
+                rangoDi = rangoDi + 1
+            if edad >= 18 and edad <= 59:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoAi = rangoAi + 1
+                mujeresM = mujeresM + 1
+            if edad >= 60:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoCi = rangoCi + 1
+                mujerTe = mujerTe + 1
+        if  genero == "m" or genero == "M":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroHi = totalGeneroHi + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                hombreMe = hombreMe + 1
+                rangoDi = rangoDi + 1
+            if edad >= 18 and edad <= 64:
+                hombreM = hombreM + 1
+                rangoAi = rangoAi + 1
+            if edad >= 65:
+                hombreTe = hombreTe + 1
+                rangoCi = rangoCi + 1
+    if prevision == "Capredena" or prevision == "capredena":
+        capredena = capredena + 1
+        print("Usted esta afiliado a capredena")
+        genero = input("Ingrese su genero M(Masculino) / F(Femenino): ")
+        if genero == "F" or genero == "f":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroMc = totalGeneroMc + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                mujerMe = mujerMe + 1
+                rangoDc = rangoDc + 1
+            if edad >= 18 and edad <= 59:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoAc = rangoAc + 1
+                mujeresM = mujeresM + 1
+            if edad >= 60:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoCc = rangoCc + 1
+                mujerTe = mujerTe + 1
+        if  genero == "m" or genero == "M":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroHc = totalGeneroHc + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                hombreMe = hombreMe + 1
+                rangoDc = rangoDc + 1
+            if edad >= 18 and edad <= 64:
+                hombreM = hombreM + 1
+                rangoAc = rangoAc + 1
+            if edad >= 65:
+                hombreTe = hombreTe + 1
+                rangoCc = rangoCc + 1
+        hombresTotalesC = hombreM + hombreMe + hombreTe
+        mujeresTotalesC = mujeresM + mujerTe + mujerMe
+    if prevision == "NA" or prevision == "na" or prevision == "Na":
+        Na = Na + 1
+        print("Usted no esta afiliado a ninguna prevision")
+        genero = input("Ingrese su genero M(Masculino) / F(Femenino): ")
+        if genero == "F" or genero == "f":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroMn = totalGeneroMn + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                mujerMe = mujerMe + 1
+                rangoDn = rangoDn + 1
+            if edad >= 18 and edad <= 59:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoAn = rangoAn + 1
+                mujeresM = mujeresM + 1
+            if edad >= 60:
+                hijos = input("¿Cantidad de hijos que posee?: ")
+                rangoCn = rangoCn + 1
+                mujerTe = mujerTe + 1
+        if  genero == "m" or genero == "M":
+            edad = int(input("Que edad tiene: "))
+            totalGeneroHn = totalGeneroHn + 1
+            if edad <= 17:
+                print("Usted es menor de edad")
+                hombreMe = hombreMe + 1
+                rangoDn = rangoDn + 1
+            if edad >= 18 and edad <= 64:
+                hombreM = hombreM + 1
+                rangoAn = rangoAn + 1
+            if edad >= 65:
+                hombreTe = hombreTe + 1
+                rangoCn = rangoCn + 1
+    inicio = int(input("Desea ingresar otro usuario (1)Si y 2(No): "))
+    
+
+print("Las estadisticas son las siguientes:")
+print()
+print("Fonasa posee un total de: ", fonasa, "afiliados")
+print("Con una cantidad de: ", totalGeneroHf, "hombres y una cantidad de: ", totalGeneroMf, "mujeres")
+print("Los rangos de edad en Fonasa son menores de 18 años igual a:", rangoDf,"entre 18 y 64 son: ", rangoAf,"y mayores a 65 son: ", rangoCf)
+print()
+print("Isapre posee un total de: ", isapre, "afiliados")
+print("Con una cantidad de: ", totalGeneroHi, "hombres y una cantidad de: ", totalGeneroMi, "mujeres")
+print("Los rangos de edad en isapre son menores de 18 años igual a:", rangoDi,"entre 18 y 64 son: ", rangoAi,"y mayores a 65 son: ", rangoCi)
+print()
+print("Dipreca posee un total de: ", capredena, "afiliados")
+print("Con una cantidad de: ", hombresTotalesC, "hombres y una cantidad de: ", mujeresTotalesC, "mujeres")
+print("Los rangos de edad en capredena son menores de 18 años igual a:", rangoDc,"entre 18 y 64 son: ", rangoAc,"y mayores a 65 son: ", rangoCc)
+print()
+print("Sin prevision posee un total de: ", Na, "afiliados")
+print("Con una cantidad de: ", hombresTotalesN, "hombres y una cantidad de: ", mujeresTotalesN, "mujeres")
+print("Los rangos de edad en sin prevision son menores de 18 años igual a:", rangoDn,"entre 18 y 64 son: ", rangoAn,"y mayores a 65 son: ", rangoCn)
+
+        
+            
+
+            
+                
+            
+        
+
+
+
+
+
+

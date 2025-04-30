@@ -1,0 +1,24 @@
+print(" Ingrese la cantidad de palabras que desea agregar a la lista: ")
+num = int(input())
+
+
+lista = []
+for i in range (0,num):
+     print("Ingrese una palabra", i)
+     elem = (input())
+     lista.append(elem)
+
+
+mayor=lista[0]
+menor=lista[0]
+
+
+for i in range(0,len(lista)):
+    if lista[i]<menor:
+        menor=lista[i]
+    if lista[i]>mayor:
+        mayor=lista[i]
+
+
+print("Los numero son", lista)
+print("el numero mayor es: ", mayor, "y el menor es: ", menor)

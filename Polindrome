@@ -1,0 +1,26 @@
+#Escribe un programa que solicite al usuario una palabra y diga si es o no polindrome
+
+print("-----------------------")
+print("| B I E N V E N I D O |")
+print("-----------------------")
+
+palabra = input("Ingrese una palabra para verificar si es polindrome: ")
+p = reversed(palabra)
+print(p)
+if palabra == p:
+    print("Es una palabra polindroma")
+else:
+    print("No es una palabra polindroma")
+
+    # Escribe un programa que solicite al usuario una palabra y diga si es o no polindrome
+
+print("-----------------------")
+print("| B I E N V E N I D O |")
+print("-----------------------")
+
+palabra = input("Ingrese una palabra para verificar si es polindrome: ")
+p = ''.join(reversed(palabra))  # Convert the reversed iterator back to a string
+if palabra == p:
+    print("Es una palabra polindroma")
+else:
+    print("No es una palabra polindroma")

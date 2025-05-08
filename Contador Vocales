@@ -1,0 +1,38 @@
+palabra= (input("Ingrese la palabra: "))
+palabra=palabra.lower()
+vocal = ['a','e','i','o','u']
+k=0
+i=0
+largo_pal=len(palabra)
+largo_vocal=len(vocal)
+contar = 0
+conta_a = 0
+conta_e = 0
+conta_i = 0
+conta_o = 0
+conta_u = 0
+
+
+
+for i in range(largo_pal):
+    for k in range(largo_vocal):
+        if palabra[i] == vocal[k]:
+           contar = contar +1 
+           if palabra[i] == 'a':
+                conta_a = conta_a + 1
+           if palabra[i] == 'e':  
+                conta_e = conta_e + 1
+           if palabra[i] == 'i':
+                conta_i = conta_i + 1
+           if palabra[i] == 'o':
+                conta_o = conta_o + 1
+           if palabra[i] == 'u':
+                conta_u = conta_u + 1
+
+print("La cantidad de vocales a es: ", contar)        
+print("la cantidad de vocales a es: ", conta_a)
+print("la cantidad de vocales a es: ", conta_e)
+print("la cantidad de vocales a es: ", conta_i)
+print("la cantidad de vocales a es: ", conta_o)
+print("la cantidad de vocales a es: ", conta_u)
+

@@ -1,0 +1,17 @@
+import array as ar
+
+vector=ar.array('i',[0]*6)
+
+for i in range(len(vector)):
+    vector[i]=int(input("ingrese un numero: "))
+
+#Intercambiar el primero con el segundo, tercero con el cuarto, etc
+
+for i in range(len(vector),2):
+    aux=vector[i]
+    vector[i]=vector[i+1]
+    vector[i+1]=aux
+
+    print(f"El valor del axu es {aux} El valor de i es: {i}")
+    #1i=i+1
+print(list(vector))

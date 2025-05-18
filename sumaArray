@@ -1,0 +1,29 @@
+#Inicializacion de arreglos
+array1 = []
+array2 = []
+array3 = []
+
+#Solicitar numero de datos que quiere incorporar a la lista
+cantidadLista1 = int(input("Ingrese la cantidad de datos que quiere para la lista 1: "))
+cantidadLista2 = int(input("Ingrese la cantidad de datos que quiere para la lista 2: "))
+
+#Solicitar datos a usuario por cada lista
+for i in range(cantidadLista1):
+      dato1 = int(input("Ingrese los datos de la primera lista: "))
+      array1.append(dato1)
+
+for i in range(cantidadLista2):
+      dato2 = int(input("Ingrese los datos de la segunda lista: "))
+      array2.append(dato2)
+      
+#Crear funcion para la suma de arreglos por cardinalidad
+longi = max(len(array1), len(array2))
+
+for i in range(longi):
+    lista1 = array1[i] if i < len(array1) else 0
+    lista2 = array2[i] if i < len(array2) else 0
+    array3.append(lista1 + lista2)
+#Retornar valores originales y sus nuevo valores por separado
+print(f"La suma de los arreglos originales: Lista 1: {array1}")
+print(f"Y arreglo original: Lista 2: {array2}")
+print(f"La suma es: {array3}")

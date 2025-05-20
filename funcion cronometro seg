@@ -1,0 +1,13 @@
+def contador(tiempo, retroceso): 
+      print(tiempo)
+      while tiempo > 0:
+            tiempo -= retroceso
+            print(tiempo)
+      return tiempo
+
+tiempo = int(input("Ingresa el tiempo que quieres contar: "))
+retroceso = int(input("Ingresa la cantidad de tiempo que quieres restar al contador:"))
+if tiempo  < 0: 
+      print("Ingrese un valor valido")
+else:
+      contador(tiempo, retroceso)

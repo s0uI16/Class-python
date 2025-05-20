@@ -1,0 +1,28 @@
+def leyOhm ():
+      menu = 1
+      while menu == 1:
+            opcion = int(input("Que desea calcular: 1) Voltaje 2) Resistencia o 3) Corriente electrica: "))
+            if opcion == 1:
+                  I = float(input("Ingrese el valor de la Corriente electrica: "))
+                  R = float(input("Ingrese el valor de la Resistencia: "))
+                  V = round(I*R,2) 
+                  print("El valor del voltaje es: ", V)  
+                  menu = 0 
+            elif opcion == 2:
+                  V = float(input("Ingrese el valor del Voltaje: "))
+                  R = float(input("Ingrese el valor de la Resistencia: "))
+                  I = round(V/R, 2)
+                  print("El valor de la corriente electrica es: ", I)   
+                  menu = 0
+            elif opcion == 3:
+                  V = float(input("Ingrese el valor del Voltaje: "))
+                  I = float(input("Ingrese el valor de la Corriente electrica: "))
+                  R = round(V/I,2)
+                  print("El valor de la corriente electrica es: ", R)   
+                  menu = 0
+            else:
+                  print("Opcion no valida")
+                  menu = 1
+      return leyOhm
+            
+leyOhm()

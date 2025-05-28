@@ -1,0 +1,31 @@
+#Mejorar el codigo para promedio de notas:
+
+
+notas = []
+alumnos = ["Jose", "Andres", "Joaquin", "Alex"]
+c=0
+f=0
+i=0
+suma_nota = 0
+
+columnas = 0
+filas = 0
+
+
+filas = int(input("Ingrese numero de filas: "))
+columnas = int(input("Ingreso numero de columnas: "))
+for f in range(0,filas):
+    for c in range(0, columnas):
+        notas.append([0]*columnas)
+
+for f in range(0,filas):
+    for c in range(0, columnas):
+        notas[f][c]= float(input(f"Ingrese las notas del estudiante {alumnos[f]}: " ))
+
+for f in range(0, filas):
+    for c in range(0, columnas):
+        suma_nota = notas[f][c] + suma_nota
+        promedio = suma_nota/columnas 
+        print(f"el promedio de {alumnos[f][c]} es: {promedio}", end='\t')
+    print('\n')
+  

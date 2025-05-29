@@ -1,31 +1,58 @@
-#Mejorar el codigo para promedio de notas:
 
+alumnos = []
+nota= []
+nota_final = []
+porcentaje_total = 0
+restante = 1
+can_notas = 0
+c = 0
+i = 0
 
-notas = []
-alumnos = ["Jose", "Andres", "Joaquin", "Alex"]
-c=0
-f=0
-i=0
-suma_nota = 0
+def calculo_nota():
+    nota = float(input("Ingrese la nota: "))
+    porcentaje = float(input("Ingrese porcentaje: "))
+    nota_eva = nota*porcentaje
+    nota_eva = nota_eva + nota_eva
+    print(nota_eva)
+    return nota_eva
+    
+calculo_nota()
 
-columnas = 0
-filas = 0
+cantidad = int(input("Ingrese la cantidad de alumnos: "))
+can_notas = int(input("Ingrese la cantidad de notas: "))+1
 
+for i in range(0,cantidad):
+    nombre = input("Ingrese el nombre de alumno: ")
+    alumnos.append(nombre)
 
-filas = int(input("Ingrese numero de filas: "))
-columnas = int(input("Ingreso numero de columnas: "))
-for f in range(0,filas):
-    for c in range(0, columnas):
-        notas.append([0]*columnas)
+for i in range(0, cantidad):
+    for c in range(0, can_notas):
+         nota.append([0]*can_notas)   
 
-for f in range(0,filas):
-    for c in range(0, columnas):
-        notas[f][c]= float(input(f"Ingrese las notas del estudiante {alumnos[f]}: " ))
+for i in range(0, cantidad):
+    nota_eva = 0
+    for n in range(0, can_notas-1):
+        nota[i][n] = float(input(f"Ingrese la {n+1} nota del alumno {alumnos[i]}: "))
+        porcentaje = float(input("Ingrese el porcentaje de la nota: "))
+    
+        nota_final [i][n] = nota_eva[i][n]*porcentaje
 
-for f in range(0, filas):
-    for c in range(0, columnas):
-        suma_nota = notas[f][c] + suma_nota
-        promedio = suma_nota/columnas 
-        print(f"el promedio de {alumnos[f][c]} es: {promedio}", end='\t')
-    print('\n')
-  
+        nota_eva = nota[i][n]*porcentaje
+        nota_final.append(nota_eva)
+        if porcentaje_total <= 1:
+            restante = restante - porcentaje
+            print(f"Faltan {restante} para tener el 100%")
+            if restante == 0:
+              porcentaje_total = 0
+              break
+        
+
+for i in range(0,cantidad):
+    for c in range(0, can_notas):
+        print(nota_final[i], end='\t')
+        print('\n')
+
+# for i in range(0, cantidad):
+#     for c in range(0, can_notas):
+#         nota[i,can_notas-1] = nota[f][0]*0.25+nota[f][1]*0.35+nota[f][2]*0.45
+#         float(input(f"Ingrese la nota del estudiante {i}: "))

@@ -1,0 +1,66 @@
+# Crear y llevar dos matrices en forma aleatoria
+# Un agricultor tiene problemas con sus plantaciones, pues hay un conejo
+# sale diaramente a comer sus cultivos
+# Se solicita saber cuantos metros recorre el el conejo en cada una de sus tractorias
+# el predio tiene 30 metros de largo y 30 metros de ancho  y cada salto que da puede ser de 0 a 3 mts
+# cuando el valor es cero, significa que el conejo esta descansando y aprovecha de comerse una zanahora
+# cuantas zanahoras se ha comiddo en cada recorrido
+import random
+import numpy
+
+campo = []
+aux = 0
+c = 0
+f = 0
+columnas = 10
+filas = 10
+suma_x = 0
+suma_x1 = 0
+suma_zana = 0
+suma_zana1 = 0
+total_recorrido = 0
+sumaL = 0
+suma_zanal = 0
+
+campo = numpy.random.randint(0,3,(filas,columnas))
+
+
+for f  in range(0,filas):
+    for c in range(0,columnas):
+        print(campo[f][c],end=' ')
+    print('\n')
+
+for f in range(0, filas):
+    for c in range(0, columnas):
+        if c == f:
+            suma_x=suma_x+campo[f][c]
+            if campo[f][c]==0:
+                suma_zana=suma_zana+1
+
+print(f"En la diagonal secundaria el recorrido {suma_x} mts y se comio {suma_zana} zanahorias")
+
+c = columnas
+for f in range(0, filas):
+    c = c-1
+    if c !=f:
+        suma_x1=suma_x1+campo[f][c]
+        if campo [f][c] == 0:
+            suma_zana1 = suma_zana1 + 1
+
+print(f"En la diagonal secundaria el recorrido {suma_x1} mts y se comio {suma_zana1} zanahorias")
+
+total_recorrido = suma_x+suma_x1
+total_zana = suma_zana + suma_zana1
+
+print(f"El conejo recorrio en X {total_recorrido} mts y se comiió {total_zana} zanahoras")
+
+for f in range(0,filas):
+    sumaL = sumaL+campo[f][0]
+    if campo [f][0] == 0:
+            suma_zanal = suma_zanal + 1
+for c in range(1,columnas):
+    sumaL = sumaL+campo[f][c]
+    if campo [f][c] == 0:
+            suma_zanal = suma_zanal + 1
+
+print(f"El conejo recorrio en L {sumaL} mts y se comiió {suma_zanal} zanahoras")

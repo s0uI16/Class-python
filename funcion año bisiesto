@@ -1,0 +1,9 @@
+def anoBisiesto (fecha):
+    if fecha % 400 == 0 or (fecha % 100 != 0 and fecha % 4 == 0):
+        print(f"El año {fecha} es un año bisiesto")
+    else:
+        print(f"El año {fecha} no es bisiesto")
+
+ano = int(input("Ingrese un año para determinar si es bisiesto o no: "))
+
+anoBisiesto(ano)

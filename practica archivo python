@@ -1,0 +1,53 @@
+#contar la cantidad de palabras (buscadas) que existen en un archivo
+#si no esta creado el archivo debera ser generador por el programa
+
+
+def contar_palabra_en_archivo(nombre_archivo, palabra_a_buscar):
+    """
+    Cuenta cuantas veces aparece una palabra especifica en un archivo.
+
+    Args:
+        nombre_archivo (str): El nombre del archivo a leer.
+        palabra_a buscar(str): La palabra que se buscara.
+
+    Returns:
+        int: el numero de veces que aparece la palabra en el archivo
+
+    
+    """
+    try:
+        with open(nombre_archivo, 'r') as archivo:
+            contenido = archivo.read()
+            #convertir a minuscula para una busqueda insensible a mayus/minus
+            contenido = contenido.lower()
+            palabra_a_buscar = palabra_a_buscar.lower()
+            #dividir el contenido en palabras
+            palabras = contenido.split()
+            #Contar las ocurrencias de la palabra
+            contador = palabras.count(palabra_a_buscar)
+            return contador
+    except FileNotFoundError:
+        return f"Error: El archivo {nombre_archivo} no se encontro."
+    except Exception as e:
+        return f"Error al leer el archivo: {e}"
+
+nombre_archivo = "ejemplo.txt"
+palabra_a_buscar = "Lenguaje"
+
+# Crear un archivo de ejemplo si no existe
+try:
+    with open(nombre_archivo, "w") as f:
+        f.write("Python es un lenguaje de programacion de alt nivel, conocido\n")
+        f.write("por su sintaxis clara y facil de leer, que lo hace popular entre \n")
+        f.write("principiantes y expertos. Es versatil y se utiliza en diversas areas \n")
+        f.write("como desarrollo web, analisis de datos, inteligencia artificial y automatizacion. \n")
+        f.write("¡Aprender Python puede ser divertido.! \n")
+except Exception as e:
+    print(f"Error al crear el archivo: {e}")
+
+numero_de_apariciones = contar_palabra_en_archivo(nombre_archivo, palabra_a_buscar)
+
+if isinstance(numero_de_apariciones, int):
+    print(f"La plabara {palabra_a_buscar} aparece {numero_de_apariciones} veces en el archivo")
+else:
+    print(numero_de_apariciones) 
